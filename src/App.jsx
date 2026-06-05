@@ -4,39 +4,45 @@ import { Link, NavLink, Route, Routes, useParams } from "react-router-dom";
 const projects = [
   {
     slug: "about-me",
+    index: "01",
     title: "About Me",
     navTitle: "About Me",
     subtitle: "Introduction",
-    summary: "어떤 개발자인지, 무엇을 중요하게 생각하는지 정리한 소개 카드입니다.",
+    summary: "개발자로서의 방향과 강점, 관심 기술을 소개합니다.",
+    meta: "Profile and background",
     description:
-      "백엔드 개발자로서 어떤 기술을 중심으로 일해왔는지, 서비스와 구조를 어떤 관점으로 보고 있는지 정리하는 영역입니다.",
+      "백엔드 개발자로서 어떤 기술을 중요하게 보는지, 서비스를 어떤 관점으로 이해하고 설계하는지 정리한 소개 영역입니다.",
     stack: ["Profile", "Stack", "Interest"],
     role: "자기소개, 기술 스택, 관심 분야 정리",
-    outcome: "지원용 포트폴리오에서 나를 빠르게 설명할 수 있는 소개 영역 구성",
+    outcome: "포트폴리오에서 나를 빠르게 설명할 수 있는 기본 소개 구조 구성",
   },
   {
-    slug: "current-work",
-    title: "Current Work",
-    navTitle: "Current Work",
+    slug: "career",
+    index: "02",
+    title: "Career",
+    navTitle: "Career",
     subtitle: "Work Experience",
-    summary: "공공기관 웹 서비스에서 맡고 있는 기능 개발과 운영 업무를 정리하는 카드입니다.",
+    summary: "현재 맡고 있는 업무와 실무에서 다루는 기술을 정리합니다.",
+    meta: "Work and experience",
     description:
-      "현재 담당 중인 서비스에서 어떤 기능을 개발하고 운영하고 있는지, 실무에서 어떤 기술과 흐름을 다루고 있는지 보여주는 영역입니다.",
+      "현재 담당 중인 서비스에서 어떤 기능을 개발하고 운영하는지, 실무에서 어떤 기술과 흐름을 다루는지 보여주는 영역입니다.",
     stack: ["Public Service", "Operation", "Backend"],
     role: "기능 개발, 운영 업무, 서비스 유지보수",
-    outcome: "실무 경험과 현재 맡고 있는 업무를 한눈에 전달",
+    outcome: "실무 경험과 현재 맡고 있는 업무를 명확하게 전달",
   },
   {
     slug: "side-project",
+    index: "03",
     title: "Side Project",
     navTitle: "Side Project",
     subtitle: "App Launch",
-    summary: "야구 커뮤니티 앱의 백엔드 개발부터 출시까지 함께한 경험을 정리하는 카드입니다.",
+    summary: "개인 프로젝트와 출시 경험, 직접 만든 결과물을 담습니다.",
+    meta: "Build and launch",
     description:
-      "사이드 프로젝트에서 맡았던 역할, 실제 출시까지 이어진 경험, 그리고 내가 만든 기능이 사용자에게 닿았던 과정을 정리하는 영역입니다.",
+      "사이드 프로젝트에서 맡았던 역할, 실제 출시까지 이어진 경험, 그리고 내가 만든 기능이 사용자에게 닿는 과정을 정리하는 영역입니다.",
     stack: ["Side Project", "Launch", "User"],
     role: "백엔드 개발, 출시 참여, 서비스 운영 흐름 경험",
-    outcome: "실제 사용자에게 닿는 서비스를 만든 경험 정리",
+    outcome: "직접 사용자에게 전달되는 서비스를 만든 경험 정리",
   },
 ];
 
@@ -57,7 +63,7 @@ function HeaderActions({ dark, onToggleDark }) {
       {projects.map((project) => (
         <NavLink
           className={({ isActive }) => `header-link${isActive ? " active" : ""}`}
-          to={`/projects/${project.slug}`}
+          to={`/${project.slug}`}
           key={project.slug}
         >
           {project.navTitle}
@@ -116,12 +122,17 @@ function LandingPage() {
               <div className="hero-intro-copy">
                 <p className="hero-name">오형석</p>
                 <h1>Backend Developer</h1>
-                <p className="hero-text">
-                  많은 사용자가 자연스럽게 찾고, 오래 머무를 수 있는 서비스를 만들고 싶은 백엔드 개발자
-                  오형석입니다. 현재 공공기관 웹 서비스의 기능 개발과 운영 업무를 담당하고 있으며,
-                  최근에는 야구 커뮤니티 앱의 백엔드 개발부터 출시까지 함께하며 제가 만든 기능이 실제
-                  사용자에게 닿는 과정을 경험했습니다.
-                </p>
+                <div className="hero-text-block">
+                  <p className="hero-text hero-text-lead">
+                    사용자가 자연스럽게 찾고 오래 머무를 수 있는 서비스를 만들고 싶은 백엔드 개발자 오형석입니다.
+                  </p>
+                  <p className="hero-text hero-text-support">
+                    공공기관 웹 서비스의 기능 개발과 운영을 맡고 있으며,
+                    <br />
+                    최근에는 커뮤니티 앱 프로젝트에서 백엔드로 참여해 기능 구현부터 배포 환경 구성과 실제
+                    출시까지의 과정을 경험했습니다.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -171,17 +182,20 @@ function LandingPage() {
               {projects.map((project, index) => (
                 <Link
                   className="project-card"
-                  to={`/projects/${project.slug}`}
+                  to={`/${project.slug}`}
                   key={project.slug}
                   style={{ "--enter-delay": `${180 + index * 90}ms` }}
                 >
-                  <p className="project-category">{project.subtitle}</p>
-                  <h3>{project.title}</h3>
-                  <p className="project-summary">{project.summary}</p>
-                  <div className="project-stack">
-                    {project.stack.map((item) => (
-                      <span key={item}>{item}</span>
-                    ))}
+                  <div className="project-card-top">
+                    <span className="project-index">{project.index}</span>
+                    <span className="project-arrow" aria-hidden="true">
+                      ↗
+                    </span>
+                  </div>
+                  <div className="project-card-body">
+                    <h3>{project.title}</h3>
+                    <p className="project-meta">{project.meta}</p>
+                    <p className="project-summary">{project.summary}</p>
                   </div>
                 </Link>
               ))}
@@ -297,7 +311,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      <Route path="/projects/:slug" element={<ProjectRouteWrapper />} />
+      <Route path="/:slug" element={<ProjectRouteWrapper />} />
     </Routes>
   );
 }

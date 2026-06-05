@@ -287,11 +287,25 @@
     white-space: nowrap;
   }
 
+  .hero-text-block {
+    max-width: 30rem;
+    margin-top: 0.95rem;
+  }
+
   .hero-text {
-    margin: 0.95rem 0 0;
-    max-width: 34rem;
+    margin: 0;
     font-size: clamp(0.96rem, 1.35vw, 1.04rem);
     color: var(--muted);
+  }
+
+  .hero-text-lead {
+    font-weight: 600;
+    color: #4e5a79;
+  }
+
+  .hero-text-support {
+    margin-top: 0.45rem;
+    line-height: 1.65;
   }
 
   .hero-meta,
@@ -343,7 +357,7 @@
   .hero-section-divider {
     width: 100%;
     height: 1px;
-    margin-top: 1.4rem;
+    margin-top: 1.8rem;
     background: rgba(33, 37, 52, 0.08);
   }
 
@@ -392,15 +406,23 @@
   }
 
   .project-list {
-    display: grid;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     gap: 0.8rem;
   }
 
   .project-card {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
     border-radius: 1.45rem;
-    padding: 1.15rem;
+    padding: 1.2rem 1.25rem 1.1rem;
     transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
     will-change: transform;
+    overflow: hidden;
+    position: relative;
   }
 
   .project-card:hover {
@@ -408,6 +430,53 @@
     box-shadow: 0 24px 38px rgba(34, 41, 59, 0.1);
     border-color: rgba(95, 127, 232, 0.28);
     transition-delay: 0ms;
+  }
+
+  .project-card::after {
+    content: "";
+    position: absolute;
+    inset: auto -2rem -2rem auto;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(95, 127, 232, 0.08), rgba(95, 127, 232, 0));
+    pointer-events: none;
+  }
+
+  .project-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+  }
+
+  .project-index {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #95a0b8;
+  }
+
+  .project-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(33, 37, 52, 0.08);
+    color: #5a6787;
+    background: rgba(255, 255, 255, 0.58);
+    font-size: 0.95rem;
+  }
+
+  .project-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.7rem;
+    min-height: 0;
   }
 
   .hero-copy,
@@ -443,25 +512,28 @@
     animation-delay: var(--enter-delay, 0ms);
   }
 
-  .project-category {
-    margin: 0 0 0.45rem;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #5fa99c;
-  }
-
   .project-card h3 {
     margin: 0;
-    font-size: 1.18rem;
-    letter-spacing: -0.03em;
+    font-size: 1.02rem;
+    letter-spacing: -0.01em;
+    color: #4e978a;
+  }
+
+  .project-meta {
+    margin: 0;
+    font-size: 0.83rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #8f99b2;
+    text-transform: uppercase;
   }
 
   .project-summary {
-    margin: 0.55rem 0 0.8rem;
+    margin: auto 0 0;
     color: var(--muted);
-    font-size: 0.95rem;
+    font-size: 0.94rem;
+    line-height: 1.5;
+    max-width: 19rem;
   }
 
   .detail-main {
@@ -563,6 +635,21 @@
     color: #aeb9d1;
   }
 
+  html.dark .hero-text-lead {
+    color: #d6def0;
+  }
+
+  html.dark .project-meta,
+  html.dark .project-index {
+    color: #8692ad;
+  }
+
+  html.dark .project-arrow {
+    color: #d8e2f7;
+    background: rgba(27, 34, 47, 0.48);
+    border-color: rgba(196, 205, 227, 0.12);
+  }
+
   html.dark .hero-name {
     color: #eef2fb;
   }
@@ -589,9 +676,12 @@
     background: rgba(196, 205, 227, 0.1);
   }
 
-  html.dark .eyebrow,
-  html.dark .project-category {
+  html.dark .eyebrow {
     color: #79b7ac;
+  }
+
+  html.dark .project-card h3 {
+    color: #86c8bc;
   }
 
   html.dark .hero-meta span,
@@ -670,6 +760,14 @@
       grid-template-columns: 1fr;
     }
 
+    .project-list {
+      flex: none;
+    }
+
+    .project-card {
+      flex: none;
+    }
+
     .hero-intro {
       grid-template-columns: 152px minmax(0, 1fr);
     }
@@ -728,6 +826,7 @@
     }
 
     .project-card {
+      flex: none;
       border-radius: 1.2rem;
     }
 
