@@ -67,38 +67,28 @@ export default function CareerPage() {
                   <article className="career-featured-item" key={project.title}>
                     <div className="career-featured-header">
                       <div>
-                        <p className="career-featured-kicker">Detailed Project</p>
                         <h3 className="doc-info-title career-featured-title">{project.title}</h3>
-                      </div>
-                      <div className="doc-info-meta">
-                        <span>{project.period}</span>
                       </div>
                     </div>
                     <div className="career-detail-blocks">
-                      {project.overview ? (
-                        <section className="career-detail-block">
-                          <h4>Project Overview</h4>
-                          <p>{project.overview}</p>
-                        </section>
-                      ) : null}
-                      {project.role ? (
-                        <section className="career-detail-block">
-                          <h4>Role</h4>
-                          <p>{project.role}</p>
-                        </section>
-                      ) : null}
                       {project.detailSections?.length ? (
-                        <section className="career-detail-block">
-                          <h4>Key Work</h4>
-                          <div className="career-detail-section-list">
-                            {project.detailSections.map((section) => (
-                              <article className="career-detail-section-item" key={section.title}>
+                        <div className="career-detail-section-list">
+                          {project.detailSections.map((section, index) => (
+                            <article className="career-detail-section-item" key={section.title}>
+                              <header className="career-detail-section-header">
+                                <span className="career-detail-section-number">
+                                  {String(index + 1).padStart(2, "0")}
+                                </span>
                                 <h5>{section.title}</h5>
-                                <p>{section.body}</p>
-                              </article>
-                            ))}
-                          </div>
-                        </section>
+                              </header>
+                              <div className="career-detail-section-copy">
+                                {section.body.split(/\n+/).map((paragraph) => (
+                                  <p key={paragraph}>{paragraph}</p>
+                                ))}
+                              </div>
+                            </article>
+                          ))}
+                        </div>
                       ) : null}
                       {project.techStack?.length ? (
                         <section className="career-detail-block">

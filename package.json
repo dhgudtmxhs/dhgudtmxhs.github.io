@@ -6,7 +6,7 @@
   "homepage": "https://dhgudtmxhs.github.io",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/create-route-indexes.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",

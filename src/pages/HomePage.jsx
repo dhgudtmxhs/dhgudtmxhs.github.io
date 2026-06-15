@@ -28,11 +28,11 @@ export default function HomePage() {
               <img src="/rocks.png" alt="ohstone profile" className="hero-portrait" />
 
               <div className="hero-intro-copy">
-                <p className="hero-name">ohstone</p>
+                <p className="hero-name">오형석</p>
                 <h1>Backend Developer</h1>
                 <div className="hero-text-block">
                   <p className="hero-text hero-text-lead">
-                    많은 사용자가 이용하는 서비스를 만들고 싶은 백엔드 개발자입니다.
+                    많은 사용자가 이용하는 서비스를 만들고 싶은 백엔드 개발자 오형석입니다.
                   </p>
                   <p className="hero-text hero-text-support">
                     공공기관 대상 서비스의 기능 개발과 운영을 맡고 있으며
