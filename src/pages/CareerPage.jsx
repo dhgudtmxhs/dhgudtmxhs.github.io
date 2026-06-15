@@ -47,7 +47,8 @@ export default function CareerPage() {
               <SectionTitle id="career-projects-title">Project Summary</SectionTitle>
               <ul className="doc-info-list career-project-list">
                 {projectSummaryItems.map((project) => (
-                  <li className="doc-info-row" key={project.title}>
+                  <li className="doc-info-row career-summary-item" key={project.title}>
+                    <span className="career-summary-dot" aria-hidden="true" />
                     <div>
                       <h3 className="doc-info-title">{project.title}</h3>
                     </div>

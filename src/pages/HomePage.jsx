@@ -88,6 +88,7 @@ export default function HomePage() {
             <div className="project-list">
               {projects.map((project, index) => {
                 const panelCopy = getProjectPanelCopy(project.slug, project.meta, project.summary);
+                const panelMeta = project.slug === "side-project" ? "BACKEND DEVELOPMENT" : panelCopy.meta;
 
                 return (
                   <Link
@@ -104,7 +105,7 @@ export default function HomePage() {
                     </div>
                     <div className="project-card-body">
                       <h3>{project.title}</h3>
-                      <p className="project-meta">{panelCopy.meta}</p>
+                      <p className="project-meta">{panelMeta}</p>
                       <p className="project-summary">{panelCopy.summary}</p>
                     </div>
                   </Link>
