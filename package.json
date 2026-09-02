@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://dhgudtmxhs.github.io",
+  "homepage": "https://dev.ohstone.me",
   "scripts": {
     "dev": "vite",
     "typecheck": "tsc --build",

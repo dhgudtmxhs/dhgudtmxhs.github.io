@@ -38,7 +38,7 @@ export default function HomePage() {
                   <p className="hero-text hero-text-support">
                     공공기관 대상 서비스의 기능 개발과 운영을 맡고 있으며
                     <br />
-                    최근에는 커뮤니티 앱 프로젝트에 참여해 기능 구현부터 배포 환경 구성과 실제 출시까지의 과정을 경험했습니다.
+                    커뮤니티 앱 프로젝트에 참여해 기능 구현부터 배포 환경 구성과 실제 출시까지의 과정을 경험했습니다.
                   </p>
                 </div>
               </div>

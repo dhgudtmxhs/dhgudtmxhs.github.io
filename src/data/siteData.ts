@@ -169,10 +169,10 @@ export const projects: PortfolioProject[] = [
 ];
 
 export const heroLinks = [
-  { label: "Career", value: "2년 5개월차", href: null },
+  { label: "Career", value: "2년 8개월", href: null },
   { label: "Birth", value: "1997.10.30", href: null },
   { label: "Location", value: "서울", href: null },
-  { label: "Email", value: "gudtjr1355@gmail.com", href: "mailto:gudtjr1355@gmail.com" },
+  { label: "Email", value: "hello@ohstone.me", href: "mailto:hello@ohstone.me" },
   { label: "GitHub", value: "github.com/dhgudtmxhs", href: "https://github.com/dhgudtmxhs" },
 ];
 
@@ -180,10 +180,10 @@ export const primaryStacks = ["Java", "Spring Boot", "JUnit", "JPA", "QueryDSL",
 export const secondaryStacks = ["Docker", "GitHub Actions", "OCI", "ELK Stack", "Gradle Multi Module"];
 
 export const profileFacts = [
-  { label: "Career", value: "2년 5개월차" },
+  { label: "Career", value: "2년 8개월" },
   { label: "Birth", value: "1997.10.30" },
   { label: "Location", value: "서울" },
-  { label: "Email", value: "gudtjr1355@gmail.com", href: "mailto:gudtjr1355@gmail.com" },
+  { label: "Email", value: "hello@ohstone.me", href: "mailto:hello@ohstone.me" },
   { label: "GitHub", value: "github.com/dhgudtmxhs", href: "https://github.com/dhgudtmxhs" },
 ];
 
@@ -267,7 +267,7 @@ export const careerOverview = {
   summary:
     "공공기관 대상 SI 프로젝트에서 업무 시스템 개발과 운영 유지보수를 수행하고 있습니다.\n\n현재는 재생의료진흥재단의 지정관리, 임상연구 과제관리, 임상연구 정보제공, 교육포털 등 연관된 업무 시스템을 지속적으로 개발·운영 중입니다.\n\n사용자 업무 흐름과 기관 운영 환경을 고려해 안정적으로 사용할 수 있는 업무 시스템을 만드는 데 집중하고 있습니다.",
   highlights: [
-    { label: "Experience", value: "2년 5개월" },
+    { label: "Experience", value: "2년 8개월" },
     { label: "Domain", value: "Public SI" },
     { label: "Role", value: "Full Stack" },
   ],
