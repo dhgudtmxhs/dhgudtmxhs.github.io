@@ -38,7 +38,7 @@ export default function HomePage() {
                   <p className="hero-text hero-text-support">
                     공공기관 대상 서비스의 기능 개발과 운영을 맡고 있으며
                     <br />
-                    커뮤니티 앱 프로젝트에 참여해 기능 구현부터 배포 환경 구성과 실제 출시까지의 과정을 경험했습니다.
+                    사이드 프로젝트를 통해 API 설계와 배포 환경 구성, 서비스 출시를 경험했습니다.
                   </p>
                 </div>
               </div>
@@ -89,12 +89,13 @@ export default function HomePage() {
             <div className="project-list">
               {projects.map((project, index) => {
                 const panelCopy = getProjectPanelCopy(project.slug, project.meta, project.summary);
-                const panelMeta = project.slug === "side-project" ? "BACKEND DEVELOPMENT" : panelCopy.meta;
+                const panelTitle = project.slug === "side-project" ? "Side Projects" : project.title;
+                const panelHref = project.slug === "side-project" ? "/side-projects" : `/${project.slug}`;
 
                 return (
                   <Link
                     className="project-card"
-                    to={`/${project.slug}`}
+                    to={panelHref}
                     key={project.slug}
                     style={{ "--enter-delay": `${180 + index * 90}ms` } as CSSProperties}
                   >
@@ -105,8 +106,8 @@ export default function HomePage() {
                       </span>
                     </div>
                     <div className="project-card-body">
-                      <h3>{project.title}</h3>
-                      <p className="project-meta">{panelMeta}</p>
+                      <h3>{panelTitle}</h3>
+                      <p className="project-meta">{panelCopy.meta}</p>
                       <p className="project-summary">{panelCopy.summary}</p>
                     </div>
                   </Link>

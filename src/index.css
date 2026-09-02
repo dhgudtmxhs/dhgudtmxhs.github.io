@@ -1804,6 +1804,16 @@
     margin-top: 0;
   }
 
+  .side-project-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .side-project-overview-card {
+    min-height: 13rem;
+  }
+
   .detail-section h2 {
     margin: 0 0 0.75rem;
     font-size: 1.05rem;
@@ -2650,6 +2660,10 @@
     }
 
     .side-project-summary-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .side-project-overview-grid {
       grid-template-columns: 1fr;
     }
 

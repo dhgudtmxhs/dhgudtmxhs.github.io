@@ -75,7 +75,7 @@ const projectDetailSections: SideProjectDetailSection[] = [
   },
 ];
 
-export default function SideProjectPage() {
+export default function BetaProjectPage() {
   const { dark, setDark, mounted } = usePageShell();
 
   return (
@@ -89,7 +89,7 @@ export default function SideProjectPage() {
         <article className="doc-sheet doc-sheet-single" aria-labelledby="side-project-title">
           <div className="doc-content">
             <header className="doc-header">
-              <p className="doc-section-title">Side Project</p>
+              <p className="doc-section-title">Side Projects</p>
               <article className="doc-info-row" aria-label="Side project overview">
                 <div>
                   <h3 id="side-project-title" className="doc-info-title">

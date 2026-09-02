@@ -13,7 +13,7 @@ export default function HeaderActions({ dark, onToggleDark }: HeaderActionsProps
       {projects.map((project) => (
         <NavLink
           className={({ isActive }) => `header-link${isActive ? " active" : ""}`}
-          to={`/${project.slug}`}
+          to={project.slug === "side-project" ? "/side-projects" : `/${project.slug}`}
           key={project.slug}
           aria-label={project.navTitle}
         >

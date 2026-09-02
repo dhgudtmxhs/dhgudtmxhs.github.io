@@ -185,8 +185,8 @@ export default function AboutPage() {
 
             <section className="doc-section" aria-labelledby="side-project-title">
               <div className="doc-section-heading">
-                <SectionTitle id="side-project-title">Side Project</SectionTitle>
-                <Link className="about-detail-link" to="/side-project" aria-label="Side Project 상세 보기">
+                <SectionTitle id="side-project-title">Side Projects</SectionTitle>
+                <Link className="about-detail-link" to="/side-projects" aria-label="Side Projects 상세 보기">
                   <svg viewBox="0 0 16 16" aria-hidden="true">
                     <path d="M5 4.5h6.5V11M11.2 4.8 4.5 11.5" />
                   </svg>
@@ -196,13 +196,17 @@ export default function AboutPage() {
                 {sideProjectItems.map((item) => (
                   <li className="doc-info-row" key={item.title}>
                     <div>
-                      <h3 className="doc-info-title">{item.title}</h3>
+                      <h3 className="doc-info-title">
+                        <Link to={`/side-projects/${item.slug}`}>{item.title}</Link>
+                      </h3>
                       <p className="doc-info-subtext">{item.meta}</p>
                     </div>
-                    <div className="doc-info-meta">
-                      <span>{item.period}</span>
-                      {item.status ? <span>{item.status}</span> : null}
-                    </div>
+                    {item.period || item.status ? (
+                      <div className="doc-info-meta">
+                        {item.period ? <span>{item.period}</span> : null}
+                        {item.status ? <span>{item.status}</span> : null}
+                      </div>
+                    ) : null}
                     {item.description ? <p className="doc-info-description">{item.description}</p> : null}
                   </li>
                 ))}

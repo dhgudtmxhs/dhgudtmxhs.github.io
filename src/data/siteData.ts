@@ -44,8 +44,9 @@ export interface PortfolioProject {
 }
 
 interface SideProjectItem {
+  slug: "beta" | "dnd-15th-5";
   title: string;
-  period: string;
+  period?: string;
   meta: string;
   description?: string;
   status?: string;
@@ -89,10 +90,10 @@ export const projects: PortfolioProject[] = [
     slug: "side-project",
     index: "03",
     title: "BETA - Baseball Together Always",
-    navTitle: "Side Project",
+    navTitle: "Side Projects",
     subtitle: "Backend Server",
     summary: "야구 팬 커뮤니티 BETA의 사용자 앱과 관리자 웹을 위한 백엔드 서버입니다.",
-    meta: "SIDE PROJECT",
+    meta: "SIDE PROJECTS",
     description:
       "BETA는 야구 커뮤니티 앱으로, 팀 프로젝트로 개발해 실제 출시까지 이어진 서비스입니다. 저는 검색, 알림, 관리자 기능을 중심으로 사용자 앱과 관리자 웹에 필요한 백엔드 기능을 구현했습니다.\n\n백엔드는 사용자 API, 관리자 API, 도메인 모듈을 분리한 Gradle 멀티모듈 구조로 구성하여 기능 영역별 책임과 변경 범위를 나누었습니다. 주요 기능으로는 Elasticsearch와 Logstash를 활용한 검색 데이터 동기화, 주요 비즈니스 로직과 푸시 발송 트랜잭션을 분리한 Firebase 푸시 알림, Redis 기반 반복 알림 제한 등이 있습니다.\n\n관리자 기능을 구현하는 과정에서는 TypeScript와 React 기반 관리자 웹을 직접 구현했습니다. 이러한 기능을 구현하고 실제 출시까지 이어가는 과정에서 GitHub Actions 기반 배포 자동화, OCI 배포 환경 구성, Prometheus/Grafana 기반 모니터링을 함께 다루며 배포와 운영에 필요한 흐름을 경험했습니다.",
     stack: ["Java", "Spring Boot", "Redis", "Elasticsearch", "Firebase Admin", "Docker"],
@@ -220,11 +221,18 @@ export const learningItems = [
 
 export const sideProjectItems: SideProjectItem[] = [
   {
+    slug: "beta",
     title: "BETA Backend Server",
     period: "2025.01 - 2025.05",
     meta: "Backend · Infra",
     description:
       "야구 팬 커뮤니티 BETA의 사용자 앱과 관리자 웹을 위한 백엔드 서버에서 관리자 기능, 검색 안정화, 푸시 알림, Redis 기반 알림 제한, 장애 알림과 DB 예외 처리를 담당했습니다.",
+  },
+  {
+    slug: "dnd-15th-5",
+    title: "DND 15기 5조 Backend",
+    meta: "Backend",
+    description: "DND 15기 5조 사이드 프로젝트의 백엔드 서버입니다.",
   },
 ];
 
@@ -421,8 +429,8 @@ export function getProjectPanelCopy(
 
   if (slug === "side-project") {
     return {
-      meta: "BETA BACKEND SERVER",
-      summary: "야구 커뮤니티 앱을 만들며 경험한 백엔드 개발 과정을 정리했습니다.",
+      meta: "BACKEND DEVELOPMENT",
+      summary: "서비스 개발 과정에서 맡은 백엔드 작업을 정리했습니다.",
     };
   }
 

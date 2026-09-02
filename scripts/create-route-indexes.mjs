@@ -2,7 +2,7 @@ import { copyFileSync, existsSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 
 const distDir = "dist";
-const routes = ["about-me", "career", "side-project"];
+const routes = ["about-me", "career", "side-projects", "side-projects/beta", "side-projects/dnd-15th-5"];
 const source = join(distDir, "index.html");
 
 if (!existsSync(source)) {
