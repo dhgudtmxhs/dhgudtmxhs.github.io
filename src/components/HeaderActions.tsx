@@ -2,7 +2,12 @@ import { NavLink } from "react-router-dom";
 import { projects } from "../data/siteData";
 import HeaderNavIcon from "./HeaderNavIcon";
 
-export default function HeaderActions({ dark, onToggleDark }) {
+interface HeaderActionsProps {
+  dark: boolean;
+  onToggleDark: () => void;
+}
+
+export default function HeaderActions({ dark, onToggleDark }: HeaderActionsProps) {
   return (
     <div className="header-actions">
       {projects.map((project) => (

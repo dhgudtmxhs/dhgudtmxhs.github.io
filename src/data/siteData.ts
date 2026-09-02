@@ -1,4 +1,62 @@
-﻿export const projects = [
+﻿export type ProjectSlug = "about-me" | "career" | "side-project";
+
+interface ProjectLink {
+  label: string;
+  href: string;
+}
+
+interface ProjectFact {
+  label: string;
+  value: string;
+}
+
+interface ProjectWorkSection {
+  title: string;
+  body: string;
+}
+
+interface ProjectPrHighlight {
+  number: number;
+  title: string;
+  tag: string;
+}
+
+export interface PortfolioProject {
+  slug: ProjectSlug;
+  index: string;
+  title: string;
+  navTitle: string;
+  subtitle: string;
+  summary: string;
+  meta: string;
+  description: string;
+  stack: string[];
+  role: string;
+  outcome: string;
+  repository?: ProjectLink;
+  appStore?: ProjectLink;
+  facts?: ProjectFact[];
+  overview?: string;
+  myRole?: string;
+  workSections?: ProjectWorkSection[];
+  prHighlights?: ProjectPrHighlight[];
+  techStack?: string[];
+}
+
+interface SideProjectItem {
+  title: string;
+  period: string;
+  meta: string;
+  description?: string;
+  status?: string;
+}
+
+interface ProjectPanelCopy {
+  meta: string;
+  summary: string;
+}
+
+export const projects: PortfolioProject[] = [
   {
     slug: "about-me",
     index: "01",
@@ -160,7 +218,7 @@ export const learningItems = [
   },
 ];
 
-export const sideProjectItems = [
+export const sideProjectItems: SideProjectItem[] = [
   {
     title: "BETA Backend Server",
     period: "2025.01 - 2025.05",
@@ -342,7 +400,11 @@ export const careerDuties = [
   "가비아 도메인 관리, SSL 인증서 적용, 서버 설정 등 운영 인프라 구성 및 관리",
 ];
 
-export function getProjectPanelCopy(slug, fallbackMeta, fallbackSummary) {
+export function getProjectPanelCopy(
+  slug: string,
+  fallbackMeta: string,
+  fallbackSummary: string,
+): ProjectPanelCopy {
   if (slug === "about-me") {
     return {
       meta: "PROFILE",

@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import HeaderActions from "./HeaderActions";
 
-export default function SiteHeader({ dark, onToggleDark, className = "" }) {
+interface SiteHeaderProps {
+  dark: boolean;
+  onToggleDark: () => void;
+  className?: string;
+}
+
+export default function SiteHeader({ dark, onToggleDark, className = "" }: SiteHeaderProps) {
   return (
     <header className={`site-header ${className}`.trim()}>
       <div className="nav-wrap">

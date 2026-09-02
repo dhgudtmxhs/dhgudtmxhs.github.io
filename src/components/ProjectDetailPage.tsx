@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
+import type { PortfolioProject } from "../data/siteData";
 import SiteHeader from "./SiteHeader";
 import usePageShell from "../hooks/usePageShell";
 
-export default function ProjectDetailPage({ project }) {
+interface ProjectDetailPageProps {
+  project: PortfolioProject;
+}
+
+export default function ProjectDetailPage({ project }: ProjectDetailPageProps) {
   const { dark, setDark, mounted } = usePageShell();
   const repositoryHref = project.repository?.href;
 
@@ -21,7 +26,7 @@ export default function ProjectDetailPage({ project }) {
 
           {repositoryHref ? (
             <a className="detail-repository-link" href={repositoryHref} target="_blank" rel="noreferrer">
-              {project.repository.label}
+              {project.repository!.label}
             </a>
           ) : null}
 

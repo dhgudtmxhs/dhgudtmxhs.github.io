@@ -3,8 +3,21 @@ import SiteHeader from "../components/SiteHeader";
 import usePageShell from "../hooks/usePageShell";
 import { projects } from "../data/siteData";
 
-const sideProject = projects.find((item) => item.slug === "side-project");
-const prBaseUrl = sideProject.repository.href;
+interface SideProjectLink {
+  label: string;
+  href: string;
+  type?: "repository";
+}
+
+interface SideProjectDetailSection {
+  title: string;
+  body: string;
+  links: SideProjectLink[];
+  separator?: string;
+}
+
+const sideProject = projects.find((item) => item.slug === "side-project")!;
+const prBaseUrl = sideProject.repository!.href;
 const projectSummaryItems = [
   "DB-검색엔진 동기화 파이프라인 구축",
   "이벤트 기반 푸시 알림과 트랜잭션 분리",
@@ -15,7 +28,7 @@ const projectSummaryItems = [
   "MySQL·Redis·Elasticsearch·Logstash 통합 테스트 환경 구축",
   "GitHub Actions·Docker·OCI 기반 서버 배포 구조 구성",
 ];
-const projectDetailSections = [
+const projectDetailSections: SideProjectDetailSection[] = [
   {
     title: "DB-검색엔진 동기화 파이프라인 구축",
     body:
@@ -183,7 +196,7 @@ export default function SideProjectPage() {
                     <section className="career-detail-block">
                       <h4>Tech Stack</h4>
                       <div className="career-detail-stack">
-                        {sideProject.techStack.map((item) => (
+                        {sideProject.techStack!.map((item) => (
                           <span key={item}>{item}</span>
                         ))}
                       </div>

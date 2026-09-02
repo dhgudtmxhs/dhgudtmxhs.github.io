@@ -1,4 +1,11 @@
-export default function HeaderNavIcon({ type, dark }) {
+import type { ProjectSlug } from "../data/siteData";
+
+interface HeaderNavIconProps {
+  type: ProjectSlug | "theme";
+  dark?: boolean;
+}
+
+export default function HeaderNavIcon({ type, dark }: HeaderNavIconProps) {
   if (type === "about-me") {
     return (
       <svg className="header-link-icon" viewBox="0 0 24 24" aria-hidden="true">

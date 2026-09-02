@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import usePageShell from "../hooks/usePageShell";
@@ -95,7 +96,7 @@ export default function HomePage() {
                     className="project-card"
                     to={`/${project.slug}`}
                     key={project.slug}
-                    style={{ "--enter-delay": `${180 + index * 90}ms` }}
+                    style={{ "--enter-delay": `${180 + index * 90}ms` } as CSSProperties}
                   >
                     <div className="project-card-top">
                       <span className="project-index">{project.index}</span>
