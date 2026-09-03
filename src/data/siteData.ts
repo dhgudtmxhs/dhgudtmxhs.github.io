@@ -91,7 +91,7 @@ export const projects: PortfolioProject[] = [
     index: "03",
     title: "BETA - Baseball Together Always",
     navTitle: "Side Projects",
-    subtitle: "Backend Server",
+    subtitle: "Backend",
     summary: "야구 팬 커뮤니티 BETA의 사용자 앱과 관리자 웹을 위한 백엔드 서버입니다.",
     meta: "SIDE PROJECTS",
     description:
@@ -108,7 +108,7 @@ export const projects: PortfolioProject[] = [
       href: "https://apps.apple.com/kr/app/beta-%EC%95%BC%EA%B5%AC%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0/id6761046053",
     },
     facts: [
-      { label: "Repository", value: "BETA Backend Server" },
+      { label: "Repository", value: "BETA Backend" },
       { label: "Period", value: "2025.01 - 2025.05" },
       { label: "Role", value: "Backend · Infra" },
     ],
@@ -222,17 +222,19 @@ export const learningItems = [
 export const sideProjectItems: SideProjectItem[] = [
   {
     slug: "beta",
-    title: "BETA Backend Server",
+    title: "BETA Backend",
     period: "2025.01 - 2025.05",
     meta: "Backend · Infra",
     description:
-      "야구 팬 커뮤니티 BETA의 사용자 앱과 관리자 웹을 위한 백엔드 서버에서 관리자 기능, 검색 안정화, 푸시 알림, Redis 기반 알림 제한, 장애 알림과 DB 예외 처리를 담당했습니다.",
+      "야구 팬 커뮤니티 BETA의 사용자 앱과 관리자 웹을 위한 백엔드입니다.\n\n관리자 기능, 검색 안정화, 푸시 알림, Redis 기반 알림 제한, 장애 알림과 DB 예외 처리를 담당했습니다.",
   },
   {
     slug: "dnd-15th-5",
-    title: "DND 15기 5조 Backend",
-    meta: "Backend",
-    description: "DND 15기 5조 사이드 프로젝트의 백엔드 서버입니다.",
+    title: "ChapChap Backend",
+    period: "2026.07 - 진행 중",
+    meta: "Backend · Infra",
+    description:
+      "일상의 소비를 기록하고 방문한 동네와 장소를 돌아보는 ChapChap 백엔드입니다.\n\nWeb/App 공통 소셜 로그인, 영수증 OCR 기반 소비 등록, 장소 외부 API 연동을 구현하고 멀티모듈·테스트 환경과 Dev 배포 흐름을 개선했습니다.",
   },
 ];
 
@@ -439,4 +441,3 @@ export function getProjectPanelCopy(
     summary: fallbackSummary,
   };
 }
-
