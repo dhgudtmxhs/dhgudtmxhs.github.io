@@ -10,11 +10,11 @@ import SideProjectsPage from "./pages/SideProjectsPage";
 
 const pageTitles: Record<string, string> = {
   "/": "오형석 | Backend Developer",
-  "/about-me": "About Me | 오형석",
-  "/career": "Career | 오형석",
-  "/side-projects": "Side Projects | 오형석",
-  "/side-projects/beta": "BETA Backend Server | 오형석",
-  "/side-projects/dnd-15th-5": "DND 15기 5조 Backend | 오형석",
+  "/about-me": "오형석 | About Me",
+  "/career": "오형석 | Career",
+  "/side-projects": "오형석 | Side Projects",
+  "/side-projects/beta": "오형석 | BETA Backend",
+  "/side-projects/dnd-15th-5": "오형석 | ChapChap Backend",
 };
 
 function RouteChangeEffects() {
@@ -23,7 +23,7 @@ function RouteChangeEffects() {
 
   useLayoutEffect(() => {
     const normalizedPath = pathname.replace(/\/+$/, "") || "/";
-    document.title = pageTitles[normalizedPath] ?? "페이지를 찾을 수 없습니다 | 오형석";
+    document.title = pageTitles[normalizedPath] ?? "오형석 | 페이지를 찾을 수 없습니다";
 
     if (navigationType === "POP") return;
 
