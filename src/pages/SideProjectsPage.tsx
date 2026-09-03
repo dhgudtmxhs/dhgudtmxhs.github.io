@@ -13,7 +13,7 @@ export default function SideProjectsPage() {
       <div className="ambient ambient-right" aria-hidden="true" />
       <SiteHeader dark={dark} onToggleDark={() => setDark((value) => !value)} />
 
-      <main className="doc-main">
+      <main className="doc-main side-projects-main">
         <article className="doc-sheet doc-sheet-single" aria-labelledby="side-projects-title">
           <div className="doc-content">
             <header className="doc-header">
@@ -21,7 +21,7 @@ export default function SideProjectsPage() {
                 Side Projects
               </h1>
               <p className="doc-intro">
-                서비스 개발 과정에서 맡은 백엔드 프로젝트를 정리했습니다.
+                참여한 프로젝트에서 담당한 백엔드 개발과 인프라 운영 경험을 정리했습니다.
               </p>
             </header>
 
@@ -40,10 +40,14 @@ export default function SideProjectsPage() {
                     </div>
                     <div className="project-card-body">
                       <h3>{project.title}</h3>
-                      <p className="project-meta">
-                        {[project.meta, project.period, project.status].filter(Boolean).join(" · ")}
-                      </p>
-                      {project.description ? <p className="project-summary">{project.description}</p> : null}
+                      <p className="project-meta">{project.period}</p>
+                      {project.description ? (
+                        <div className="project-summary side-project-overview-summary">
+                          {project.description.split(/\n+/).map((paragraph) => (
+                            <p key={paragraph}>{paragraph}</p>
+                          ))}
+                        </div>
+                      ) : null}
                     </div>
                   </Link>
                 ))}
