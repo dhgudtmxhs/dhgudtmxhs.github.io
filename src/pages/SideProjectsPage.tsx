@@ -17,8 +17,10 @@ export default function SideProjectsPage() {
         <article className="doc-sheet doc-sheet-single" aria-labelledby="side-projects-title">
           <div className="doc-content">
             <header className="doc-header">
-              <p className="doc-section-title">Side Projects</p>
-              <p id="side-projects-title" className="doc-intro">
+              <h1 id="side-projects-title" className="doc-section-title" data-page-heading tabIndex={-1}>
+                Side Projects
+              </h1>
+              <p className="doc-intro">
                 서비스 개발 과정에서 맡은 백엔드 프로젝트를 정리했습니다.
               </p>
             </header>

@@ -30,7 +30,7 @@ export default function HomePage() {
 
               <div className="hero-intro-copy">
                 <p className="hero-name">오형석</p>
-                <h1>Backend Developer</h1>
+                <h1 data-page-heading tabIndex={-1}>Backend Developer</h1>
                 <div className="hero-text-block">
                   <p className="hero-text hero-text-lead">
                     많은 사용자가 이용하는 서비스를 만들고 싶은 백엔드 개발자 오형석입니다.
@@ -81,7 +81,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <section className="project-panel" aria-labelledby="project-panel-title">
+          <section className="project-panel">
             <div className="panel-header">
               <p className="eyebrow panel-eyebrow">Overview</p>
             </div>

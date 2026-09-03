@@ -27,10 +27,12 @@ export default function CareerPage() {
         <article className="doc-sheet doc-sheet-single" aria-labelledby="career-title">
           <div className="doc-content">
             <header className="doc-header">
-              <p className="doc-section-title">Career</p>
+              <h1 id="career-title" className="doc-section-title" data-page-heading tabIndex={-1}>
+                Career
+              </h1>
               <article className="doc-info-row" aria-label="Career overview">
                 <div>
-                  <h3 id="career-title" className="doc-info-title">
+                  <h3 className="doc-info-title">
                     {careerOverview.company}
                   </h3>
                   <p className="doc-info-subtext">{careerOverview.role}</p>

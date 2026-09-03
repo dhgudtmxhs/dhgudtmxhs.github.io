@@ -19,7 +19,9 @@ export default function DndProjectPage() {
               <p className="doc-section-title">Side Projects</p>
               <article className="doc-info-row" aria-label="DND project overview">
                 <div>
-                  <h3 id="dnd-project-title" className="doc-info-title">DND 15기 5조 Backend</h3>
+                  <h1 id="dnd-project-title" className="doc-info-title" data-page-heading tabIndex={-1}>
+                    DND 15기 5조 Backend
+                  </h1>
                   <p className="doc-info-subtext">Backend</p>
                 </div>
                 <div className="doc-info-meta">

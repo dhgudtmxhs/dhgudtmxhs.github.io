@@ -92,9 +92,9 @@ export default function BetaProjectPage() {
               <p className="doc-section-title">Side Projects</p>
               <article className="doc-info-row" aria-label="Side project overview">
                 <div>
-                  <h3 id="side-project-title" className="doc-info-title">
+                  <h1 id="side-project-title" className="doc-info-title" data-page-heading tabIndex={-1}>
                     {sideProject.title}
-                  </h3>
+                  </h1>
                   <p className="doc-info-subtext">{sideProject.role}</p>
                 </div>
                 <div className="doc-info-meta">

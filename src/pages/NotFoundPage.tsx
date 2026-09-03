@@ -12,7 +12,7 @@ export default function NotFoundPage() {
       <main className="detail-main">
         <section className="detail-card">
           <p className="eyebrow">Not Found</p>
-          <h1>페이지를 찾을 수 없습니다</h1>
+          <h1 data-page-heading tabIndex={-1}>페이지를 찾을 수 없습니다</h1>
           <Link className="detail-back" to="/">
             메인으로 돌아가기
           </Link>

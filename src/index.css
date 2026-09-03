@@ -948,7 +948,7 @@
     padding-bottom: 18px;
   }
 
-  .doc-header h1 {
+  .doc-header h1:not(.doc-section-title):not(.doc-info-title) {
     max-width: 45rem;
     margin: 0;
     font-size: clamp(1.8rem, 3.8vw, 3rem);

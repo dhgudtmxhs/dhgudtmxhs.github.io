@@ -104,8 +104,10 @@ export default function AboutPage() {
 
           <div className="doc-content">
             <header className="doc-header">
-              <p className="doc-section-title">About Me</p>
-              <p id="about-title" className="doc-intro">
+              <h1 id="about-title" className="doc-section-title" data-page-heading tabIndex={-1}>
+                About Me
+              </h1>
+              <p className="doc-intro">
                 <span>
                   Java와 Spring Boot를 기반으로 공공기관 SI 프로젝트의 기능 개발과 운영을 맡으며 실제 업무 흐름에 맞게 안정적으로 동작하는 업무 시스템을 개발하고 있습니다.
                 </span>
