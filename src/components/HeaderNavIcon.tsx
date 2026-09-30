@@ -10,7 +10,7 @@ export default function HeaderNavIcon({ type, dark }: HeaderNavIconProps) {
     return (
       <svg className="header-link-icon" viewBox="0 0 24 24" aria-hidden="true">
         <path
-          d="M12 12.2a3.7 3.7 0 1 0 0-7.4 3.7 3.7 0 0 0 0 7.4Zm-6.4 7c.7-3.4 3-5.2 6.4-5.2s5.7 1.8 6.4 5.2"
+          d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2ZM11 9a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM6 16c0-2 1-3 3-3s3 1 3 3m3-6h3m-3 4h3"
           fill="none"
           stroke="currentColor"
           strokeWidth="2.1"
@@ -25,7 +25,7 @@ export default function HeaderNavIcon({ type, dark }: HeaderNavIconProps) {
     return (
       <svg className="header-link-icon" viewBox="0 0 24 24" aria-hidden="true">
         <path
-          d="M8.4 7.2V5.8c0-.9.6-1.5 1.5-1.5h4.2c.9 0 1.5.6 1.5 1.5v1.4M5.5 8h13c.9 0 1.5.6 1.5 1.5v8.3c0 .9-.6 1.5-1.5 1.5h-13c-.9 0-1.5-.6-1.5-1.5V9.5C4 8.6 4.6 8 5.5 8Zm6.5 4.5v1.1"
+          d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M5 7h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2ZM3 12a20 20 0 0 0 18 0M12 12v3"
           fill="none"
           stroke="currentColor"
           strokeWidth="2.1"
@@ -40,7 +40,7 @@ export default function HeaderNavIcon({ type, dark }: HeaderNavIconProps) {
     return (
       <svg className="header-link-icon" viewBox="0 0 24 24" aria-hidden="true">
         <path
-          d="M4.5 7.4c0-.9.6-1.5 1.5-1.5h4.2l1.7 1.8H18c.9 0 1.5.6 1.5 1.5v7.4c0 .9-.6 1.5-1.5 1.5H6c-.9 0-1.5-.6-1.5-1.5V7.4Z"
+          d="M9 15v-5l2-3 3-2.5L17 3h4v4l-1.5 3-2.5 3-3 2H9ZM18 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM9 9H5l-3 5h7m6 0v5l-5 3v-7m-4 2-3 3m4 0-1 1"
           fill="none"
           stroke="currentColor"
           strokeWidth="2.1"

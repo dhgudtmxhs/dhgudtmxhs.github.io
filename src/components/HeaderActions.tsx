@@ -16,6 +16,7 @@ export default function HeaderActions({ dark, onToggleDark }: HeaderActionsProps
           to={project.slug === "side-project" ? "/side-projects" : `/${project.slug}`}
           key={project.slug}
           aria-label={project.navTitle}
+          title={project.navTitle}
         >
           <HeaderNavIcon type={project.slug} />
           <span className="header-link-text">{project.navTitle}</span>

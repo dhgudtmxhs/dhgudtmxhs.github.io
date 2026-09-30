@@ -37,7 +37,7 @@ export default function HomePage() {
                   </p>
                   <p className="hero-text hero-text-support">
                     공공기관 대상 서비스의 기능 개발과 운영을 맡고 있으며
-                    <br />
+                    {" "}
                     사이드 프로젝트를 통해 API 설계와 배포 환경 구성, 서비스 출시를 경험했습니다.
                   </p>
                 </div>

@@ -7,11 +7,13 @@ import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import BetaProjectPage from "./pages/SideProjectPage";
 import SideProjectsPage from "./pages/SideProjectsPage";
+import ResumePage from "./pages/ResumePage";
 
 const pageTitles: Record<string, string> = {
   "/": "오형석 | Backend Developer",
   "/about-me": "오형석 | About Me",
   "/career": "오형석 | Career",
+  "/resume": "오형석 | 이력서 · 포트폴리오",
   "/side-projects": "오형석 | Side Projects",
   "/side-projects/beta": "오형석 | BETA Backend",
   "/side-projects/dnd-15th-5": "오형석 | ChapChap Backend",
@@ -47,6 +49,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about-me" element={<AboutPage />} />
         <Route path="/career" element={<CareerPage />} />
+        <Route path="/resume" element={<ResumePage />} />
         <Route path="/side-projects" element={<SideProjectsPage />} />
         <Route path="/side-projects/beta" element={<BetaProjectPage />} />
         <Route path="/side-projects/dnd-15th-5" element={<DndProjectPage />} />

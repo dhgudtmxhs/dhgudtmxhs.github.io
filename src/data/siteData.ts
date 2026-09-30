@@ -418,21 +418,21 @@ export function getProjectPanelCopy(
   if (slug === "about-me") {
     return {
       meta: "PROFILE",
-      summary: "프로필과 주요 이력 및 기술 스택을 정리했습니다.",
+      summary: "소개와 주요 이력, 교육·자격, 기술 스택",
     };
   }
 
   if (slug === "career") {
     return {
       meta: "WORK EXPERIENCE",
-      summary: "실무에서 맡았던 업무와 프로젝트 경험을 정리했습니다.",
+      summary: "재직 이력과 담당 업무, 실무 프로젝트별 기여",
     };
   }
 
   if (slug === "side-project") {
     return {
       meta: "BACKEND DEVELOPMENT",
-      summary: "서비스 개발 과정에서 맡은 백엔드 작업을 정리했습니다.",
+      summary: "사이드 프로젝트 소개와 구현 내용, 개발 기록",
     };
   }
 
