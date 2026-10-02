@@ -14,7 +14,7 @@ export default function HomePage() {
   const { dark, setDark, mounted } = usePageShell();
 
   return (
-    <div className={`page-shell ${mounted ? "page-ready" : ""}`}>
+    <div className={`page-shell home-page ${mounted ? "page-ready" : ""}`}>
       <div className="ambient ambient-left" aria-hidden="true" />
       <div className="ambient ambient-right" aria-hidden="true" />
 
@@ -33,12 +33,12 @@ export default function HomePage() {
                 <h1 data-page-heading tabIndex={-1}>Backend Developer</h1>
                 <div className="hero-text-block">
                   <p className="hero-text hero-text-lead">
-                    많은 사용자가 이용하는 서비스를 만들고 싶은 백엔드 개발자 오형석입니다.
+                    서비스의 흐름을 이해하고, 안정적으로 운영할 수 있는 백엔드를 만듭니다.
                   </p>
                   <p className="hero-text hero-text-support">
-                    공공기관 대상 서비스의 기능 개발과 운영을 맡고 있으며
+                    Java와 Spring을 기반으로 공공기관 서비스를 개발·운영하는 백엔드 개발자 오형석입니다.
                     {" "}
-                    사이드 프로젝트를 통해 API 설계와 배포 환경 구성, 서비스 출시를 경험했습니다.
+                    업무 규칙과 데이터 정합성이 중요한 시스템을 다루며, 운영 중 발생하는 문제를 분석하고 개선해 왔습니다.
                   </p>
                 </div>
               </div>
@@ -99,17 +99,13 @@ export default function HomePage() {
                     key={project.slug}
                     style={{ "--enter-delay": `${180 + index * 90}ms` } as CSSProperties}
                   >
-                    <div className="project-card-top">
-                      <span className="project-index">{project.index}</span>
-                      <span className="project-arrow" aria-hidden="true">
-                        ↗
-                      </span>
-                    </div>
                     <div className="project-card-body">
                       <h3>{panelTitle}</h3>
-                      <p className="project-meta">{panelCopy.meta}</p>
                       <p className="project-summary">{panelCopy.summary}</p>
                     </div>
+                    <svg className="home-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                      <path d="M5 12h14m-6-6 6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                   </Link>
                 );
               })}

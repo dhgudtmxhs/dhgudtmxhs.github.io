@@ -171,14 +171,12 @@ export const projects: PortfolioProject[] = [
 
 export const heroLinks = [
   { label: "Career", value: "2년 8개월", href: null },
-  { label: "Birth", value: "1997.10.30", href: null },
-  { label: "Location", value: "서울", href: null },
   { label: "Email", value: "hello@ohstone.me", href: "mailto:hello@ohstone.me" },
   { label: "GitHub", value: "github.com/dhgudtmxhs", href: "https://github.com/dhgudtmxhs" },
 ];
 
 export const primaryStacks = ["Java", "Spring Boot", "JUnit", "JPA", "QueryDSL", "MySQL", "Redis"];
-export const secondaryStacks = ["Docker", "GitHub Actions", "OCI", "ELK Stack", "Gradle Multi Module"];
+export const secondaryStacks = ["Docker", "CI·CD", "AWS", "OCI", "CLOVA OCR", "ELK", "Gradle Multi-Module"];
 
 export const profileFacts = [
   { label: "Career", value: "2년 8개월" },
@@ -418,21 +416,21 @@ export function getProjectPanelCopy(
   if (slug === "about-me") {
     return {
       meta: "PROFILE",
-      summary: "소개와 주요 이력, 교육·자격, 기술 스택",
+      summary: "소개와 기술 스택, 교육·자격 이력",
     };
   }
 
   if (slug === "career") {
     return {
       meta: "WORK EXPERIENCE",
-      summary: "재직 이력과 담당 업무, 실무 프로젝트별 기여",
+      summary: "공공기관 서비스의 개발·운영 경험",
     };
   }
 
   if (slug === "side-project") {
     return {
       meta: "BACKEND DEVELOPMENT",
-      summary: "사이드 프로젝트 소개와 구현 내용, 개발 기록",
+      summary: "BETA와 ChapChap의 개발 과정과 기술적 선택",
     };
   }
 

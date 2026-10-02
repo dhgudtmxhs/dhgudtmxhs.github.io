@@ -94,6 +94,23 @@
     display: none;
   }
 
+  html:not(.dark) .home-page {
+    background:
+      radial-gradient(circle at top left, rgba(95, 127, 232, 0.12), transparent 30%),
+      radial-gradient(circle at top right, rgba(86, 186, 171, 0.12), transparent 26%),
+      #f4f6f8;
+  }
+
+  html:not(.dark) .home-page > .ambient {
+    display: block;
+  }
+
+  html:not(.dark) .home-page .site-header {
+    background: transparent;
+    backdrop-filter: none;
+    border-bottom-color: rgba(33, 37, 52, 0.14);
+  }
+
   .ambient-right {
     top: 14rem;
     right: -4rem;
@@ -151,7 +168,7 @@
     padding: 0;
     border-radius: 0;
     font-size: 0.95rem;
-    font-weight: 650;
+    font-weight: 400;
     color: #424b64;
     background: transparent;
     border: 0;
@@ -163,6 +180,7 @@
   }
 
   .header-link.active {
+    font-weight: 600;
     color: #4f6fd8;
   }
 
@@ -568,19 +586,34 @@
   }
 
   .landing-main .project-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
     padding: 1rem 1.25rem;
   }
 
-  .landing-main .project-summary {
-    margin: 0.45rem 0 0;
+  .landing-main .project-card-body {
+    min-width: 0;
+    justify-content: center;
+    gap: 0.6rem;
   }
 
-  .landing-main .project-meta,
-  .landing-main .project-index {
-    color: #687086;
+  .landing-main .project-summary {
+    margin: 0;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
   }
 
   .landing-main .project-card h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .home-card-arrow {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex: none;
     color: #397d70;
   }
 
@@ -2050,12 +2083,11 @@
     color: #79b7ac;
   }
 
-  html.dark .landing-main .project-meta,
-  html.dark .landing-main .project-index {
-    color: #a2aec7;
+  html.dark .landing-main .project-card h3 {
+    color: #eef2fb;
   }
 
-  html.dark .landing-main .project-card h3 {
+  html.dark .home-card-arrow {
     color: #86c8bc;
   }
 
@@ -2492,6 +2524,10 @@
     .site-header {
       position: sticky;
       top: 0;
+    }
+
+    html:not(.dark) .home-page .site-header {
+      background: #f4f6f8;
     }
 
     .nav-wrap {
